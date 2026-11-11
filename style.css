@@ -1,0 +1,721 @@
+/* ==========================
+   VARIABLES
+========================== */
+
+:root {
+    --red: #d62839;
+    --dark: #10243a;
+    --blue: #163b5c;
+    --light: #f5f8fc;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+section {
+    padding: 110px 0;
+    scroll-margin-top: 60px;
+}
+
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar {
+    background: rgba(16,36,58,0.96);
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 23px;
+}
+
+.navbar-brand i {
+    color: #ff5365;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 12px;
+    margin-left: 8px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #ff5365 !important;
+}
+
+
+/* ==========================
+   HERO
+========================== */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 130px;
+
+    background: linear-gradient(
+        -45deg,
+        #ffffff,
+        #fff0f1,
+        #eaf2fa,
+        #ffffff
+    );
+
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.badge-medical {
+    display: inline-block;
+    background: #ffe5e8;
+    color: var(--red);
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 75px);
+    font-weight: 900;
+    margin-top: 25px;
+    animation: slideLeft 1s ease;
+}
+
+.hero h1 span,
+h2 span {
+    color: var(--red);
+}
+
+.hero-description {
+    color: #687b8e;
+    font-size: 18px;
+    line-height: 1.9;
+    margin-top: 20px;
+}
+
+.author {
+    margin: 30px 0;
+    color: #596b7e;
+}
+
+.btn-medical {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--red);
+    color: white;
+    padding: 15px 28px;
+    border-radius: 35px;
+    font-weight: 700;
+    transition: 0.4s;
+}
+
+.btn-medical:hover {
+    color: white;
+    background: #a91527;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(214,40,57,0.3);
+}
+
+.blood-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d62839, #8e1020);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    font-size: 130px;
+    box-shadow: 0 20px 60px rgba(214,40,57,0.25);
+    animation: floating 4s infinite ease-in-out;
+}
+
+.floating-text {
+    margin-top: 30px;
+    color: var(--red);
+    font-weight: 800;
+    animation: pulse 2s infinite;
+}
+
+
+/* ==========================
+   SECTION GENERAL
+========================== */
+
+.section-light {
+    background: var(--light);
+}
+
+.section-dark {
+    background: var(--dark);
+    color: white;
+}
+
+.number {
+    display: inline-block;
+    color: var(--red);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.intro {
+    color: #64758a;
+    max-width: 850px;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.intro-white {
+    color: #d0dce9;
+    line-height: 1.9;
+    max-width: 800px;
+}
+
+
+/* ==========================
+   CARDS
+========================== */
+
+.medical-card {
+    background: white;
+    padding: 30px;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(16,36,58,0.07);
+    transition: 0.4s;
+}
+
+.medical-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 40px rgba(214,40,57,0.15);
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+    background: #ffe5e8;
+    color: var(--red);
+    border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.medical-card h4,
+.dark-card h4,
+.product-card h4,
+.risk-card h4 {
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.medical-card p,
+.product-card p,
+.risk-card p {
+    color: #718095;
+    line-height: 1.8;
+}
+
+
+/* ==========================
+   DARK CARDS
+========================== */
+
+.dark-card {
+    background: #1b3854;
+    padding: 30px;
+    height: 100%;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.4s;
+}
+
+.dark-card:hover {
+    transform: translateY(-10px);
+    background: #244767;
+}
+
+.dark-card i {
+    font-size: 40px;
+    color: #ff5365;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.dark-card p {
+    color: #d0dce9;
+    line-height: 1.8;
+}
+
+
+/* ==========================
+   INDICATIONS
+========================== */
+
+.info-item {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    transition: 0.3s;
+}
+
+.info-item:hover {
+    transform: translateX(10px);
+}
+
+.info-item i {
+    color: var(--red);
+    font-size: 27px;
+}
+
+.info-item h5 {
+    font-weight: 800;
+}
+
+.info-item p {
+    color: #718095;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.illustration {
+    background: #ffe5e8;
+    padding: 60px 30px;
+    border-radius: 30px;
+    color: var(--red);
+}
+
+.illustration i {
+    font-size: 100px;
+    animation: floating 3s infinite;
+}
+
+.illustration h4 {
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+
+/* ==========================
+   PRODUCTS
+========================== */
+
+.product-card {
+    height: 100%;
+    padding: 35px;
+    border-radius: 22px;
+    transition: 0.4s;
+}
+
+.product-card i {
+    font-size: 55px;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+.red-card {
+    background: #ffe5e8;
+    color: #c51f32;
+}
+
+.yellow-card {
+    background: #fff1cf;
+    color: #ad7900;
+}
+
+.blue-card {
+    background: #e1efff;
+    color: #1762a5;
+}
+
+.product-card:hover {
+    transform: translateY(-12px) scale(1.02);
+}
+
+
+/* ==========================
+   BLOOD GROUPS
+========================== */
+
+.blood-group {
+    background: white;
+    color: var(--red);
+    border-radius: 20px;
+    text-align: center;
+    padding: 35px;
+    font-size: 45px;
+    font-weight: 900;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.blood-group:hover {
+    transform: scale(1.1) rotate(3deg);
+    background: var(--red);
+    color: white;
+}
+
+
+/* ==========================
+   TIMELINE
+========================== */
+
+.timeline {
+    margin-top: 40px;
+    border-left: 4px solid var(--red);
+    padding-left: 35px;
+    margin-left: 15px;
+}
+
+.timeline-item {
+    position: relative;
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    animation: fadeUp 1s ease both;
+    transition: 0.4s;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
+}
+
+.timeline-item span {
+    position: absolute;
+    left: -70px;
+    top: 20px;
+    background: var(--red);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+}
+
+.timeline-item h5 {
+    font-weight: 800;
+}
+
+.timeline-item p {
+    color: #718095;
+    margin-bottom: 0;
+}
+
+
+/* ==========================
+   RISKS
+========================== */
+
+.risk-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    height: 100%;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    transition: 0.4s;
+}
+
+.risk-card:hover {
+    transform: translateY(-10px);
+}
+
+.risk-card i {
+    color: var(--red);
+    font-size: 45px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+
+/* ==========================
+   CONCLUSION
+========================== */
+
+.conclusion {
+    background: linear-gradient(135deg, #10243a, #244767);
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.conclusion-icon {
+    font-size: 75px;
+    color: #ff5365;
+    animation: pulse 2s infinite;
+}
+
+.conclusion h2 {
+    font-size: 45px;
+    margin: 25px;
+}
+
+.conclusion p {
+    max-width: 800px;
+    margin: 20px auto;
+    color: #d0dce9;
+    line-height: 1.9;
+    font-size: 17px;
+}
+
+.conclusion h3 {
+    color: #ff6475;
+    font-weight: 800;
+    margin-top: 35px;
+}
+
+.thanks {
+    margin-top: 35px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+
+/* ==========================
+   QCM
+========================== */
+
+.quiz-section {
+    background: #f1f5fa;
+}
+
+.quiz-container {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.quiz-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    transition: 0.4s;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+}
+
+.quiz-card h4 {
+    color: var(--dark);
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.quiz-card label {
+    display: block;
+    padding: 13px;
+    background: #f5f7fa;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-card label:hover {
+    background: #ffe5e8;
+    color: var(--red);
+}
+
+.quiz-card input {
+    accent-color: var(--red);
+    margin-right: 10px;
+}
+
+.quiz-card details {
+    margin-top: 15px;
+}
+
+.quiz-card summary {
+    color: var(--red);
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.answer {
+    background: #d9f7e5;
+    color: #126a39;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    line-height: 1.7;
+    animation: fadeUp 0.5s ease;
+}
+
+.quiz-finish {
+    text-align: center;
+    background: var(--dark);
+    color: white;
+    padding: 50px 20px;
+    border-radius: 25px;
+}
+
+.quiz-finish i {
+    color: #ff5365;
+    font-size: 65px;
+}
+
+.quiz-finish h3 {
+    font-weight: 800;
+    margin: 20px;
+}
+
+.quiz-finish p {
+    color: #d0dce9;
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+    background: #091827;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    margin: 5px;
+    color: #a9b8c8;
+}
+
+
+/* ==========================
+   ANIMATIONS
+========================== */
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px) {
+
+    section {
+        padding: 85px 0;
+    }
+
+    .hero {
+        text-align: center;
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .blood-circle {
+        width: 190px;
+        height: 190px;
+        font-size: 85px;
+        margin-top: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .timeline {
+        margin-left: 10px;
+    }
+
+    .quiz-card {
+        padding: 20px;
+    }
+
+}
